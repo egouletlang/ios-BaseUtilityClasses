@@ -9,9 +9,9 @@
 import Foundation
 import CoreGraphics
 
-extension CGColor {
+public extension CGColor {
     
-    func toRGB() -> UIColorRGB {
+    public func toRGB() -> UIColorRGB {
         let components = CGColorGetComponents(self)
         let red = Int(components[0] * 255)
         let green = Int(components[1] * 255)
@@ -20,7 +20,7 @@ extension CGColor {
         return Int64((red<<16) | (green<<8) | (blue))
     }
     
-    func toColorComponents() -> [CGFloat] {
+    public func toColorComponents() -> [CGFloat] {
         let components = CGColorGetComponents(self)
         
         return [
@@ -31,7 +31,7 @@ extension CGColor {
         ]
     }
     
-    func toRGBString(prefixWithHash: Bool = true) -> String {
+    public func toRGBString(prefixWithHash: Bool = true) -> String {
         let components = CGColorGetComponents(self)
         var r = NSString(format: "%X", UInt(components[0] * 255))
         var g = NSString(format: "%X", UInt(components[1] * 255))

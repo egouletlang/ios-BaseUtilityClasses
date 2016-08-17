@@ -10,15 +10,15 @@ import Foundation
 import CoreGraphics
 import UIKit
 
-class PresentationHelper {
-    class func buildNavBarSpace(width: CGFloat) -> UIBarButtonItem {
+public class PresentationHelper {
+    public class func buildNavBarSpace(width: CGFloat) -> UIBarButtonItem {
         let button = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
         button.width = width
         return button
     }
     
     // MARK: - Alert -
-    class func displayAlert<T>(
+    public class func displayAlert<T>(
         viewController: UIViewController,
         labels: [String],
         vals: [String: T],
@@ -34,7 +34,7 @@ class PresentationHelper {
         }
     }
     
-    class func displayAlert(
+    public class func displayAlert(
         viewController: UIViewController,
         labels: [String],
         styles: [String: UIAlertActionStyle] = [:],
@@ -64,7 +64,7 @@ class PresentationHelper {
     }
     
     // MARK: - Handle Share Options -
-    class func displayActionSheet<T>(
+    public class func displayActionSheet<T>(
         viewController: UIViewController,
         labels: [String],
         vals: [T],
@@ -83,7 +83,7 @@ class PresentationHelper {
         }
     }
     
-    class func displayActionSheet(
+    public class func displayActionSheet(
         viewController: UIViewController,
         labels: [String],
         withTitle: String? = nil,

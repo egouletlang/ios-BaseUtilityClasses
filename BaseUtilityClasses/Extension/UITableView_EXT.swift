@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-extension UITableView {
+public extension UITableView {
     
     /// Returns whether NSIndexPath is out of bounds in the current table view
     /// Can be used as safe guard before update/delete operations in the table view to avoid crashes
-    func isIndexPathValid(index: NSIndexPath) -> Bool {
+    public func isIndexPathValid(index: NSIndexPath) -> Bool {
         return (index.section <= self.numberOfSections) && (index.row <= self.numberOfRowsInSection(index.section))
     }
     

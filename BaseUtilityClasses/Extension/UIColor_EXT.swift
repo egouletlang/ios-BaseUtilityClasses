@@ -12,7 +12,7 @@ import UIKit
 /// Represents RGB color values (0xRRGGBB)
 public typealias UIColorRGB = Int64
 
-extension UIColor {
+public extension UIColor {
     
     public convenience init(rgb: Int64) {
         if rgb > 0xFFFFFF { // there is some alpha component
@@ -66,15 +66,15 @@ extension UIColor {
         return nil
     }
     
-    func toColorComponents() -> [CGFloat] {
+    public func toColorComponents() -> [CGFloat] {
         return self.CGColor.toColorComponents()
     }
     
-    func toRGB() -> UIColorRGB {
+    public func toRGB() -> UIColorRGB {
         return self.CGColor.toRGB()
     }
     
-    func toRGBString(prefixWithHash: Bool = true) -> String {
+    public func toRGBString(prefixWithHash: Bool = true) -> String {
         return self.CGColor.toRGBString(prefixWithHash)
     }
     

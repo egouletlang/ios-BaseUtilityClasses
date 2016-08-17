@@ -8,9 +8,9 @@
 
 import Foundation
 
-extension Array {
+public extension Array {
     
-    func foreach(block: (Element)->()) {
+    public func foreach(block: (Element)->()) {
         for item in self {
             block(item)
         }
@@ -18,7 +18,7 @@ extension Array {
     
     /// Returns the element or nil if the index was out of bounds
     /// NOTICE, if T is a nill-able element (like String?) that the return will be double nillable. Not sure how to deal with that
-    func get(index: Int) -> Element? {
+    public func get(index: Int) -> Element? {
         if self.count > index && index >= 0 {
             return self[index]
         } else {

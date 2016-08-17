@@ -8,17 +8,17 @@
 
 import Foundation
 
-extension String {
+public extension String {
     
-    func contains(text: String) -> Bool {
+    public func contains(text: String) -> Bool {
         return self.rangeOfString(text) != nil
     }
     
-    func startsWith(text: String) -> Bool {
+    public func startsWith(text: String) -> Bool {
         return CFStringHasPrefix(self, text)
     }
     
-    func endsWith(text: String) -> Bool {
+    public func endsWith(text: String) -> Bool {
         return CFStringHasSuffix(self, text)
     }
 }
