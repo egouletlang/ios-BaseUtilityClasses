@@ -12,10 +12,10 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
 
   s.name         = "BaseUtilityClasses"
-  s.version      = "0.0.1"
-  s.summary      = "A set of classes I have found useful when developing for ios"
+  s.version      = "0.1.0"
+  s.summary      = "Utility Classes"
   s.description  = <<-DESC
-Utility Classes
+A set of classes I have found useful when developing for ios
                    DESC
 
 
@@ -23,6 +23,7 @@ Utility Classes
   s.author       = { "Etienne Goulet-Lang" => "" }
   s.source       = { :git => "https://github.com/egouletlang/ios-BaseUtilityClasses.git", :tag => "#{s.version}" }
 
+  s.homepage = "https://github.com/egouletlang/ios-BaseUtilityClasses"
 
   s.source_files  = "Classes", "Classes/**/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
