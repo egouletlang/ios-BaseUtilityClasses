@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
 
   s.name         = "BaseUtilityClasses"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Utility Classes"
   s.description  = <<-DESC
 A set of classes I have found useful when developing for ios
@@ -25,7 +25,7 @@ A set of classes I have found useful when developing for ios
 
   s.homepage = "https://github.com/egouletlang/ios-BaseUtilityClasses"
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
+  s.source_files  = "BaseUtilityClasses", "BaseUtilityClasses/**/*.{h,m}", "BaseUtilityClasses/**/*.{swift}"
   s.exclude_files = "Classes/Exclude"
 
 end
