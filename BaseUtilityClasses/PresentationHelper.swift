@@ -16,21 +16,6 @@ class PresentationHelper {
         button.width = width
         return button
     }
-    class func buildNavBarButton(name: String, target: AnyObject?, action: Selector, tintColor: UIColor? = nil) -> UIBarButtonItem {
-        var image = UIImage(named: name)
-        if let color = tintColor {
-            image = ImageHelper.imageWithColorMask(image, color: color)
-        }
-        
-        let button = UIButton(type: UIButtonType.Custom)
-        button.setImage(image, forState: UIControlState.Normal)
-        button.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
-        button.frame = CGRectMake(0, 0, 20, 20)
-        
-        let ret = UIBarButtonItem(customView: button)
-        ret.width = 20
-        return ret
-    }
     
     // MARK: - Alert -
     class func displayAlert<T>(
