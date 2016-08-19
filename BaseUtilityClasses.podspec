@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
 
   s.name         = "BaseUtilityClasses"
-  s.version      = "1.0.7"
+  s.version      = "1.0.8"
   s.summary      = "Utility Classes"
   s.description  = <<-DESC
 A set of classes I have found useful when developing for ios

@@ -11,11 +11,36 @@ import CoreGraphics
 import UIKit
 
 public class PresentationHelper {
+    
+    // MARK: - Navigation -
     public class func buildNavBarSpace(width: CGFloat) -> UIBarButtonItem {
         let button = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
         button.width = width
         return button
     }
+    public class func buildNavBarButton(image: UIImage, target: AnyObject?, action: Selector, tintColor: UIColor? = nil) -> UIBarButtonItem {
+        let button = UIButton(type: UIButtonType.Custom)
+        button.setImage(image, forState: UIControlState.Normal)
+        button.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
+        button.frame = CGRectMake(0, 0, 20, 20)
+        
+        let ret = UIBarButtonItem(customView: button)
+        ret.width = 20
+        return ret
+    }
+    public class func buildNavBarLabel(label: String, target: AnyObject?, action: Selector, tintColor: UIColor? = UIColor.whiteColor()) -> UIBarButtonItem {
+        
+        let button = UIButton(type: UIButtonType.Custom)
+        button.setTitle(label, forState: .Normal)
+        button.setTitleColor(tintColor, forState: .Normal)
+        button.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
+        button.sizeToFit()
+        
+        let ret = UIBarButtonItem(customView: button)
+        ret.width = button.frame.width
+        return ret
+    }
+    
     
     // MARK: - Alert -
     public class func displayAlert<T>(
