@@ -10,15 +10,15 @@ import Foundation
 
 public extension String {
     
-    public func contains(text: String) -> Bool {
-        return self.rangeOfString(text) != nil
+    public func contains(_ text: String) -> Bool {
+        return self.range(of: text) != nil
     }
     
-    public func startsWith(text: String) -> Bool {
-        return CFStringHasPrefix(self, text)
+    public func startsWith(_ text: String) -> Bool {
+        return CFStringHasPrefix(self as CFString!, text as CFString!)
     }
     
-    public func endsWith(text: String) -> Bool {
-        return CFStringHasSuffix(self, text)
+    public func endsWith(_ text: String) -> Bool {
+        return CFStringHasSuffix(self as CFString!, text as CFString!)
     }
 }

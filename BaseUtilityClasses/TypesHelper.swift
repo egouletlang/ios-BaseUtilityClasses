@@ -8,16 +8,16 @@
 
 import Foundation
 
-public class TypesHelper {
-    public class func concat(list: [String], split: String = " ") -> String {
-        return list.joinWithSeparator(split)
+open class TypesHelper {
+    open class func concat(_ list: [String], split: String = " ") -> String {
+        return list.joined(separator: split)
     }
     
-    public class func toJsonString(obj: AnyObject) -> String? {
+    open class func toJsonString(_ obj: AnyObject) -> String? {
         var err: NSError?
-        var nsdata: NSData?
+        var nsdata: Data?
         do {
-            nsdata = try NSJSONSerialization.dataWithJSONObject(obj, options: NSJSONWritingOptions())
+            nsdata = try JSONSerialization.data(withJSONObject: obj, options: JSONSerialization.WritingOptions())
         } catch let error as NSError {
             err = error
             nsdata = nil
@@ -26,15 +26,16 @@ public class TypesHelper {
         if err != nil {
             return nil
         } else {
-            return NSString(data: nsdata!, encoding: NSUTF8StringEncoding)! as String
+            return NSString(data: nsdata!, encoding: String.Encoding.utf8.rawValue)! as String
         }
     }
     
-    public class func jsonStringToDict(str: String?) -> [String: AnyObject] {
+    open class func jsonStringToDict(_ str: String?) -> [String: AnyObject] {
+        
         if  let s = str,
-            let d = NSString(string: s).dataUsingEncoding(NSUTF8StringEncoding) {
+            let d = NSString(string: s).data(using: String.Encoding.utf8.rawValue) {
             do {
-                if let r = try NSJSONSerialization.JSONObjectWithData(d, options: .AllowFragments) as? [String : AnyObject] {
+                if let r = try JSONSerialization.jsonObject(with: d, options: .allowFragments) as? [String : AnyObject] {
                     return r
                 }
             } catch {}

@@ -8,32 +8,32 @@
 
 import Foundation
 
-public class ThreadHelper {
+open class ThreadHelper {
     
-    public class func executeOnMainThread(block block: (()->())) {
-        dispatch_async(dispatch_get_main_queue()) {
+    open class func executeOnMainThread(block: @escaping (()->())) {
+        DispatchQueue.main.async {
             block()
             return
         }
     }
-    public class func executeOnBackgroundThread(block block: ()->Void) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
+    open class func executeOnBackgroundThread(block: @escaping ()->Void) {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
             block()
         }
     }
     
     /// Checks state of current thread. If foreground schedules block to be executed on background.
     /// If thread is not foreground, executes block on current thread
-    public class func checkedExecuteOnBackgroundThread(block block: ()->Void) {
-        if !NSThread.isMainThread() {
+    open class func checkedExecuteOnBackgroundThread(block: @escaping ()->Void) {
+        if !Thread.isMainThread {
             block()
         } else {
             executeOnBackgroundThread(block: block)
         }
     }
     
-    public class func checkedExecuteOnMainThread(block block: ()->Void) {
-        if NSThread.isMainThread() {
+    open class func checkedExecuteOnMainThread(block: @escaping ()->Void) {
+        if Thread.isMainThread {
             block()
         } else {
             ThreadHelper.executeOnMainThread(block: block)
@@ -41,20 +41,20 @@ public class ThreadHelper {
     }
     
     
-    public class func delay(sec sec: Double, mainThread: Bool, block: ()->Void) {
+    open class func delay(sec: Double, mainThread: Bool, block: @escaping ()->Void) {
         
         let delay = createDispatchTime(sec)
         
         if mainThread {
-            dispatch_after(delay, dispatch_get_main_queue(), block)
+            DispatchQueue.main.asyncAfter(deadline: delay, execute: block)
         } else {
-            dispatch_after(delay, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), block)
+            DispatchQueue.global(qos: DispatchQoS.QoSClass.default).asyncAfter(deadline: delay, execute: block)
         }
     }
     
     /// Creates a dispatch_time based on number of seconds after "now"
-    private class func createDispatchTime(seconds: Double) -> dispatch_time_t {
-        return dispatch_time(DISPATCH_TIME_NOW, Int64(seconds * Double(NSEC_PER_SEC)))
+    fileprivate class func createDispatchTime(_ seconds: Double) -> DispatchTime {
+        return DispatchTime.now() + Double(Int64(seconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
     }
     
 }

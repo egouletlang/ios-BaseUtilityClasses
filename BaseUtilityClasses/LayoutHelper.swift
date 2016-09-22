@@ -12,11 +12,11 @@ import Foundation
 import UIKit
 import CoreGraphics
 
-public class LayoutHelper {
+open class LayoutHelper {
     
-    public static var onePixel: CGFloat = {
-        if UIScreen.mainScreen().respondsToSelector(#selector(NSDecimalNumberBehaviors.scale)) {
-            let scale = UIScreen.mainScreen().scale
+    open static var onePixel: CGFloat = {
+        if UIScreen.main.responds(to: #selector(NSDecimalNumberBehaviors.scale)) {
+            let scale = UIScreen.main.scale
             if scale != 0 {
                 return 1.0 / scale
             }

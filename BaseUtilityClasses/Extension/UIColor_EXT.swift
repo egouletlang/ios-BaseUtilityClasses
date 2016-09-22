@@ -41,16 +41,15 @@ public extension UIColor {
         var r, g, b, a: CGFloat
         
         let scrubbedStr = hexString
-            .stringByReplacingOccurrencesOfString("#", withString: "")
-            .stringByReplacingOccurrencesOfString("0x", withString: "")
-            .uppercaseString
+            .replacingOccurrences(of: "#", with: "")
+            .replacingOccurrences(of: "0x", with: "").uppercased()
         
         
-        let scanner = NSScanner(string: scrubbedStr)
+        let scanner = Scanner(string: scrubbedStr)
         var hexNumber: UInt64 = 0
         
         
-        if scanner.scanHexLongLong(&hexNumber) {
+        if scanner.scanHexInt64(&hexNumber) {
             a = CGFloat((hexNumber & 0xff000000) >> 24) / 255
             r = CGFloat((hexNumber & 0x00ff0000) >> 16) / 255
             g = CGFloat((hexNumber & 0x0000ff00) >> 8) / 255
@@ -67,15 +66,15 @@ public extension UIColor {
     }
     
     public func toColorComponents() -> [CGFloat] {
-        return self.CGColor.toColorComponents()
+        return self.cgColor.toColorComponents()
     }
     
     public func toRGB() -> UIColorRGB {
-        return self.CGColor.toRGB()
+        return self.cgColor.toRGB()
     }
     
-    public func toRGBString(prefixWithHash: Bool = true) -> String {
-        return self.CGColor.toRGBString(prefixWithHash)
+    public func toRGBString(_ prefixWithHash: Bool = true) -> String {
+        return self.cgColor.toRGBString(prefixWithHash)
     }
     
 }
