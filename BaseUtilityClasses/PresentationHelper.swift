@@ -10,15 +10,15 @@ import Foundation
 import CoreGraphics
 import UIKit
 
-open class PresentationHelper {
+public class PresentationHelper {
     
     // MARK: - Navigation -
-    open class func buildNavBarSpace(_ width: CGFloat) -> UIBarButtonItem {
+    public class func buildNavBarSpace(_ width: CGFloat) -> UIBarButtonItem {
         let button = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.fixedSpace, target: nil, action: nil)
         button.width = width
         return button
     }
-    open class func buildNavBarButton(_ image: UIImage, target: AnyObject?, action: Selector, tintColor: UIColor? = nil) -> UIBarButtonItem {
+    public class func buildNavBarButton(_ image: UIImage, target: AnyObject?, action: Selector, tintColor: UIColor? = nil) -> UIBarButtonItem {
         let button = UIButton(type: UIButtonType.custom)
         button.setImage(image, for: UIControlState())
         button.addTarget(target, action: action, for: UIControlEvents.touchUpInside)
@@ -28,7 +28,7 @@ open class PresentationHelper {
         ret.width = 20
         return ret
     }
-    open class func buildNavBarLabel(_ label: String, target: AnyObject?, action: Selector, tintColor: UIColor? = UIColor.white) -> UIBarButtonItem {
+    public class func buildNavBarLabel(_ label: String, target: AnyObject?, action: Selector, tintColor: UIColor? = UIColor.white) -> UIBarButtonItem {
         
         let button = UIButton(type: UIButtonType.custom)
         button.setTitle(label, for: UIControlState())
@@ -43,7 +43,7 @@ open class PresentationHelper {
     
     
     // MARK: - Alert -
-    open class func displayAlert<T>(
+    public class func displayAlert<T>(
         _ viewController: UIViewController,
         labels: [String],
         vals: [String: T],
@@ -59,7 +59,7 @@ open class PresentationHelper {
         }
     }
     
-    open class func displayAlert(
+    public class func displayAlert(
         _ viewController: UIViewController,
         labels: [String],
         styles: [String: UIAlertActionStyle] = [:],
@@ -89,7 +89,7 @@ open class PresentationHelper {
     }
     
     // MARK: - Handle Share Options -
-    open class func displayActionSheet<T>(
+    public class func displayActionSheet<T>(
         _ viewController: UIViewController,
         labels: [String],
         vals: [T],
@@ -108,7 +108,7 @@ open class PresentationHelper {
         }
     }
     
-    open class func displayActionSheet(
+    public class func displayActionSheet(
         _ viewController: UIViewController,
         labels: [String],
         withTitle: String? = nil,

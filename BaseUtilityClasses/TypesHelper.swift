@@ -8,12 +8,12 @@
 
 import Foundation
 
-open class TypesHelper {
-    open class func concat(_ list: [String], split: String = " ") -> String {
+public class TypesHelper {
+    public class func concat(_ list: [String], split: String = " ") -> String {
         return list.joined(separator: split)
     }
     
-    open class func toJsonString(_ obj: AnyObject) -> String? {
+    public class func toJsonString(_ obj: AnyObject) -> String? {
         var err: NSError?
         var nsdata: Data?
         do {
@@ -30,7 +30,7 @@ open class TypesHelper {
         }
     }
     
-    open class func jsonStringToDict(_ str: String?) -> [String: AnyObject] {
+    public class func jsonStringToDict(_ str: String?) -> [String: AnyObject] {
         
         if  let s = str,
             let d = NSString(string: s).data(using: String.Encoding.utf8.rawValue) {

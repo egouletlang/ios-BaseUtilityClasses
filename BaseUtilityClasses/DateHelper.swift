@@ -9,7 +9,7 @@
 import Foundation
 
 private var dateObjs: [String: DateFormatter] = [:]
-open class DateHelper {
+public class DateHelper {
     
     // Data formatter Methods
     public enum DateComparison {
@@ -21,7 +21,7 @@ open class DateHelper {
         case na
     }
     
-    open class func isLater(later: Date?, earlier: Date?) -> Bool {
+    public class func isLater(later: Date?, earlier: Date?) -> Bool {
         if let l = later, let e = earlier {
             return l.compare(e) == .orderedDescending
         } else if later == nil {
@@ -32,7 +32,7 @@ open class DateHelper {
         return false
     }
     
-    open class func compareDates(day1: Date!, day2: Date!) -> DateComparison {
+    public class func compareDates(day1: Date!, day2: Date!) -> DateComparison {
         if day1 == nil || day2 == nil {
             return .na
         }
@@ -57,13 +57,13 @@ open class DateHelper {
         }
     }
     
-    open class func isWithin(curr: Date, prev: Date!, within: Int) -> Bool {
+    public class func isWithin(curr: Date, prev: Date!, within: Int) -> Bool {
         if prev == nil { return false }
         let diff = Int(abs(curr.timeIntervalSince(prev)))
         return (diff < within)
     }
     
-    open class func formatDate(_ format: String, date: Date) -> String {
+    public class func formatDate(_ format: String, date: Date) -> String {
         var formatter = dateObjs[format]
         if formatter == nil {
             formatter = DateFormatter()

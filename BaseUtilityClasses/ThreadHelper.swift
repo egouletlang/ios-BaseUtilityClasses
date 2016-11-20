@@ -8,15 +8,15 @@
 
 import Foundation
 
-open class ThreadHelper {
+public class ThreadHelper {
     
-    open class func executeOnMainThread(block: @escaping (()->())) {
+    public class func executeOnMainThread(block: @escaping (()->())) {
         DispatchQueue.main.async {
             block()
             return
         }
     }
-    open class func executeOnBackgroundThread(block: @escaping ()->Void) {
+    public class func executeOnBackgroundThread(block: @escaping ()->Void) {
         DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
             block()
         }
@@ -24,7 +24,7 @@ open class ThreadHelper {
     
     /// Checks state of current thread. If foreground schedules block to be executed on background.
     /// If thread is not foreground, executes block on current thread
-    open class func checkedExecuteOnBackgroundThread(block: @escaping ()->Void) {
+    public class func checkedExecuteOnBackgroundThread(block: @escaping ()->Void) {
         if !Thread.isMainThread {
             block()
         } else {
@@ -32,7 +32,7 @@ open class ThreadHelper {
         }
     }
     
-    open class func checkedExecuteOnMainThread(block: @escaping ()->Void) {
+    public class func checkedExecuteOnMainThread(block: @escaping ()->Void) {
         if Thread.isMainThread {
             block()
         } else {
@@ -41,7 +41,7 @@ open class ThreadHelper {
     }
     
     
-    open class func delay(sec: Double, mainThread: Bool, block: @escaping ()->Void) {
+    public class func delay(sec: Double, mainThread: Bool, block: @escaping ()->Void) {
         
         let delay = createDispatchTime(sec)
         
