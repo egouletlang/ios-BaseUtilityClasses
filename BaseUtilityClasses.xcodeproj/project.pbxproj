@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B4B22461DE163A300F58BC8 /* AttributeStringCreator.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B4B22421DE163A300F58BC8 /* AttributeStringCreator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6B4B22471DE163A300F58BC8 /* AttributeStringCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B4B22431DE163A300F58BC8 /* AttributeStringCreator.m */; };
+		6B4B22481DE163A300F58BC8 /* AttributeStringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4B22441DE163A300F58BC8 /* AttributeStringHelper.swift */; };
+		6B4B22491DE163A300F58BC8 /* LabelInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4B22451DE163A300F58BC8 /* LabelInformation.swift */; };
+		6B4B224C1DE163B500F58BC8 /* BaseUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4B224A1DE163B500F58BC8 /* BaseUILabel.swift */; };
+		6B4B224D1DE163B500F58BC8 /* BaseUILabelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4B224B1DE163B500F58BC8 /* BaseUILabelDelegate.swift */; };
+		6B4B224F1DE1641600F58BC8 /* AttributeStringCreator.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B4B22421DE163A300F58BC8 /* AttributeStringCreator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6B4B22511DE165A100F58BC8 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4B22501DE165A100F58BC8 /* Types.swift */; };
 		6B5B00A81D64D01C00E18871 /* BaseUtilityClasses.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B5B00A71D64D01C00E18871 /* BaseUtilityClasses.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6B5B00AF1D64D01C00E18871 /* BaseUtilityClasses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B5B00A41D64D01C00E18871 /* BaseUtilityClasses.framework */; };
 		6B5B00B41D64D01C00E18871 /* BaseUtilityClassesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B00B31D64D01C00E18871 /* BaseUtilityClassesTests.swift */; };
@@ -35,6 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B4B22421DE163A300F58BC8 /* AttributeStringCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributeStringCreator.h; sourceTree = "<group>"; };
+		6B4B22431DE163A300F58BC8 /* AttributeStringCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributeStringCreator.m; sourceTree = "<group>"; };
+		6B4B22441DE163A300F58BC8 /* AttributeStringHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeStringHelper.swift; sourceTree = "<group>"; };
+		6B4B22451DE163A300F58BC8 /* LabelInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelInformation.swift; sourceTree = "<group>"; };
+		6B4B224A1DE163B500F58BC8 /* BaseUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUILabel.swift; sourceTree = "<group>"; };
+		6B4B224B1DE163B500F58BC8 /* BaseUILabelDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUILabelDelegate.swift; sourceTree = "<group>"; };
+		6B4B22501DE165A100F58BC8 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		6B5B00A41D64D01C00E18871 /* BaseUtilityClasses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BaseUtilityClasses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B5B00A71D64D01C00E18871 /* BaseUtilityClasses.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseUtilityClasses.h; sourceTree = "<group>"; };
 		6B5B00A91D64D01C00E18871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,6 +89,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B4B223F1DE1636000F58BC8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6B4B22401DE1639400F58BC8 /* Label */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		6B4B22401DE1639400F58BC8 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				6B4B224A1DE163B500F58BC8 /* BaseUILabel.swift */,
+				6B4B224B1DE163B500F58BC8 /* BaseUILabelDelegate.swift */,
+				6B4B22411DE1639400F58BC8 /* Helper */,
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
+		6B4B22411DE1639400F58BC8 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				6B4B22421DE163A300F58BC8 /* AttributeStringCreator.h */,
+				6B4B22431DE163A300F58BC8 /* AttributeStringCreator.m */,
+				6B4B22441DE163A300F58BC8 /* AttributeStringHelper.swift */,
+				6B4B22451DE163A300F58BC8 /* LabelInformation.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		6B5B009A1D64D01C00E18871 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +140,7 @@
 		6B5B00A61D64D01C00E18871 /* BaseUtilityClasses */ = {
 			isa = PBXGroup;
 			children = (
+				6B4B223F1DE1636000F58BC8 /* UI */,
 				6B5B01211D64E34F00E18871 /* Extension */,
 				6B5B00A71D64D01C00E18871 /* BaseUtilityClasses.h */,
 				6B5B00A91D64D01C00E18871 /* Info.plist */,
@@ -104,6 +149,7 @@
 				6B5B011C1D64E2F700E18871 /* ThreadHelper.swift */,
 				6B5B011D1D64E2F700E18871 /* TypesHelper.swift */,
 				6B5B01F11D67C0CA00E18871 /* DateHelper.swift */,
+				6B4B22501DE165A100F58BC8 /* Types.swift */,
 			);
 			path = BaseUtilityClasses;
 			sourceTree = "<group>";
@@ -133,11 +179,20 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		6B4B224E1DE1640A00F58BC8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B4B224F1DE1641600F58BC8 /* AttributeStringCreator.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6B5B00A11D64D01C00E18871 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6B5B00A81D64D01C00E18871 /* BaseUtilityClasses.h in Headers */,
+				6B4B22461DE163A300F58BC8 /* AttributeStringCreator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +224,7 @@
 				6B5B00AA1D64D01C00E18871 /* Sources */,
 				6B5B00AB1D64D01C00E18871 /* Frameworks */,
 				6B5B00AC1D64D01C00E18871 /* Resources */,
+				6B4B224E1DE1640A00F58BC8 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -192,7 +248,7 @@
 				TargetAttributes = {
 					6B5B00A31D64D01C00E18871 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 					};
 					6B5B00AD1D64D01C00E18871 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -242,10 +298,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B5B012C1D64E34F00E18871 /* UIColor_EXT.swift in Sources */,
+				6B4B22491DE163A300F58BC8 /* LabelInformation.swift in Sources */,
+				6B4B22481DE163A300F58BC8 /* AttributeStringHelper.swift in Sources */,
+				6B4B22511DE165A100F58BC8 /* Types.swift in Sources */,
 				6B5B00BF1D64D06900E18871 /* LayoutHelper.swift in Sources */,
+				6B4B22471DE163A300F58BC8 /* AttributeStringCreator.m in Sources */,
 				6B5B01201D64E2F700E18871 /* TypesHelper.swift in Sources */,
 				6B5B012B1D64E34F00E18871 /* String_EXT.swift in Sources */,
 				6B5B01281D64E34F00E18871 /* Array_EXT.swift in Sources */,
+				6B4B224D1DE163B500F58BC8 /* BaseUILabelDelegate.swift in Sources */,
+				6B4B224C1DE163B500F58BC8 /* BaseUILabel.swift in Sources */,
 				6B5B01291D64E34F00E18871 /* CGColor_EXT.swift in Sources */,
 				6B5B012A1D64E34F00E18871 /* Dictionary_EXT.swift in Sources */,
 				6B5B012D1D64E34F00E18871 /* UITableView_EXT.swift in Sources */,
@@ -314,7 +376,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -359,7 +421,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
